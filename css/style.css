@@ -10,7 +10,7 @@ h1{
 	font-family: Didot;
 }
 
-h3{
+h3 {
 	font-family: Didot;
 	text-align: center;
 }
@@ -30,7 +30,7 @@ hr {
 	border-style: inset;
 }
 
-.scoreBox{
+.scoreBox {
 	width: 50px;
 }
 
@@ -40,11 +40,11 @@ hr {
 
 }*/
 
-#titleDisplay{
+#titleDisplay {
 	text-align: center;
 }
 
-#tic{
+#tic {
 	font-size: 24px;
 	font-family: Didot;
 	text-align: center;
@@ -115,7 +115,7 @@ hr {
 	float: left;
 }
 
-#redSmallDotLeft{
+#redSmallDotLeft {
 	height: 15px;
 	width: 15px;
 	background-color: #CF0000;
@@ -123,7 +123,7 @@ hr {
 	float: left;
 }
 
-#blueSmallDotLeft{
+#blueSmallDotLeft {
 	height: 15px;
 	width: 15px;
 	background-color: #010163;
@@ -131,7 +131,7 @@ hr {
 	float: left;
 }
 
-#redSmallDotRight{
+#redSmallDotRight {
 	height: 15px;
 	width: 15px;
 	background-color: #CF0000;
@@ -139,7 +139,7 @@ hr {
 	float: right;
 }
 
-#blueSmallDotRight{
+#blueSmallDotRight {
 	height: 15px;
 	width: 15px;
 	background-color: #010163;
@@ -147,7 +147,7 @@ hr {
 	float: right;
 }
 
-#score{
+#score {
 	text-align: center;
 	overflow:hidden;
 	display: block;
@@ -155,11 +155,12 @@ hr {
 	font-family: Didot;
 }
 
-#score1{
+#score1 {
 	float: left;
 /*	text-align: center;*/
 }
-#score2{
+
+#score2 {
 	float: right;
 /*	text-align: center;*/
 }

@@ -1,66 +1,52 @@
 <!DOCTYPE html>
 <html ng-app='boxApp'>
-<head>
-	<title>ANGULAR TTT</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<script src="js/angular.min.js"></script>
-	<script src="js/app.js"></script>
-	<script src="js/BoxController.js"></script>
-</head>
-
-<body ng-controller="BoxController as boxCtrl" >
-
-{{2+2}} test
-<header
-<div id="titleDisplay">
-
-<span id="tic"> {{"Tic"}}</span><span id="tac">{{"Tac"}}</span><span id="toe">{{"Toe"}}</span>
-</div>
-<div id="blueSmallDotLeft"></div>
-<div id="redSmallDotLeft"></div>
-
-<div id="blueSmallDotRight"></div>
-<div id="redSmallDotRight"></div>
-
-</header>
-
- <hr>
-
-<div id="playerPick">
-	<h3>
-		<span id="pickBlue">Player One </span> 	
-		| 
-		<span id="pickRed"> Player Two </span>
-	</h3>
-</div>
- 
-<div class="grid">
-
-
-	<div 
-		class="box"
-		ng-repeat = "b in boxCtrl.buttons"
-		ng-class="{x: b.player1}"
-		ng-click="boxCtrl.clickBox($index)"
-		ng-class="{redDot: b.active}"
-	>
-
-
-
-	</div>
-
-
-</div>
-
-<div id="score">
-<h2><div id="displayResult"> {{ "Let's Play" }} </div></h2>
-
-<!-- use ng hide and ng show -->
-
-<div id="reset">
-<h2>{{"Reset"}}
-<br><button ng-click="boxCtrl.clearGrid()"></button></h2>
-</div>
-
-</body>
+	<head>
+		<title>ANGULAR TTT</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script src="js/angular.min.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/BoxController.js"></script>
+	</head>
+	<body ng-controller="BoxController as boxCtrl" >
+		{{2+2}} test
+			<header>
+				<div id="titleDisplay">
+					<span id="tic">{{"Tic"}}</span>
+					<span id="tac">{{"Tac"}}</span>
+					<span id="toe">{{"Toe"}}</span>
+				</div>
+				<div id="blueSmallDotLeft"></div>
+				<div id="redSmallDotLeft"></div>
+				<div id="blueSmallDotRight"></div>
+				<div id="redSmallDotRight"></div>
+			</header>
+			<hr>
+				<div id="playerPick">
+					<h3>
+						<span id="pickBlue">Player One</span> | 
+						<span id="pickRed">Player Two</span>
+					</h3>
+				</div>
+				<div class="grid">
+					<div class="box" 
+						ng-repeat="b in boxCtrl.buttons"
+						ng-class="{x: b.player1}"
+						ng-click="boxCtrl.clickBox($index)"
+						ng-class="{redDot: b.active}">
+					</div>
+				</div>
+				<div id="score">
+					<h2>
+						<div id="displayResult"> {{"Let's Play"}} 
+						</div>
+					</h2>
+		<!-- use ng hide and ng show -->
+	 			<div id="reset">
+					<h2>{{"Reset"}}
+					<br>
+						<button ng-click="boxCtrl.clearGrid()">
+						</button>
+					</h2>
+				</div>
+	</body>
 </html>

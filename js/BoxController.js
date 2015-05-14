@@ -9,7 +9,7 @@ angular
     self.player1=true;
     self.player2=false;
     self.win = false;
-    self.counter=0;
+    self.counter = 0;
     self.clickBox = clickBox;
 
     // self.clearReset = clearReset;
@@ -35,9 +35,9 @@ angular
         console.log("X");
         self.buttons[$index].display = "X";
 // console.log(self.buttons[$index].display);
-
         self.buttons[$index].active[$index] = true;
         self.player1 = false;
+
       } else {
         console.log("0");
         self.buttons[$index].display = "0";
@@ -45,6 +45,8 @@ angular
         self.player1 = true;
       }
       winner();
+      self.counter ++;
+      console.log(self.counter )
     }
 
 
@@ -74,7 +76,7 @@ function winner() {
   {
   console.log("player one wins");
 
-   // win = true;
+   win = true;
   } else if
     (
     ((self.buttons[0].display == "0") && (self.buttons[1].display == "0") && (self.buttons[2].display == "0")) ||   
@@ -88,8 +90,13 @@ function winner() {
     ) 
  {
     console.log("player two wins");
-//   win = true;
+  win = true;
 }
+  else {
+   if(self.counter === 8) {
+  console.log("It's a Tie!");
+   }
+ } 
 
 
 //   // function clearGrid() {

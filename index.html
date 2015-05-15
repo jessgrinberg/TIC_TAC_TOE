@@ -14,8 +14,12 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 	</head>
 	<body ng-controller="BoxController as boxCtrl" >
-		{{2+2}} test
+		<!-- {{2+2}} test -->
 
+      <p ng-repeat="person in boxCtrl.names">
+       Welcome {{ person }}
+      </p>
+  
 		
 			<header>
 				<div id="titleDisplay">
@@ -31,7 +35,7 @@
 			<hr>
 				<div id="playerPick">
 					<h3>
-						<span id="pickBlue">Player One</span> | 
+						<span class="pickBlue" ng-click="boxCtrl.setPlayerBlue()" >Player One</span> | 
 						<span id="pickRed">Player Two</span>
 					</h3>
 				</div>
@@ -59,5 +63,15 @@
 						</button>
 					</h2>
 				</div>
+				<!-- <form class="add-name" ng-submit="boxCtrl.addTodo()"> -->
+					<input class="text-box" type="text" placeholder="Enter Name player 1" ng-model="boxCtrl.newName">
+					<!-- <input type="submit" class="btn btn-add" value="+"> -->
+					<button class="boxName" ng-click="boxCtrl.addNames()">Add Name Player 1</button>
+
+				<!-- 	<br>
+					<input class="text-box" type="text" placeholder="Name player 2" ng-model="boxCtrl.newName2">
+					<button class="boxName" ng-click="boxCtrl.addName2()">Add Name Player 2</button> -->
+			<!-- 	</form> -->
+				<!-- <p>{{ boxCtrl.addName }} </p> -->
 	</body>
 </html>

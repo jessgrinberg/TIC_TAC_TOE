@@ -162,6 +162,7 @@ function BoxController(){
       self.player1 = true;
       self.player2 = false;
       self.win = false;
+      self.names = [];
       self.buttons = [
 
     { active: false, 
@@ -206,6 +207,12 @@ function BoxController(){
      //self.buttons[0],1
   }
 
+// self.setPlayerBlue = setPlayerBlue;
+// self.pickBlue = pickBlue;
+
+//  function setPlayer(){
+//         self.pickBlue.splice(0, 1);
+//         }
 
     // function clearGrid() {
     // self.clearReset = self.buttons[$index];
@@ -215,6 +222,21 @@ function BoxController(){
 
 
 //function clearGrid() {
+
+
+self.names = [];
+self.newName = " ";
+self.addNames = addNames;
+  function addNames(){
+        self.names.push(self.newName);
+        }
+
+// self.addNamePlayer2 = addName2;
+// self.names2 = [""];
+// self.newName2 = " ";
+//   function addName2(){
+//         self.names2.push(self.newName2);
+//         }
 
 
 

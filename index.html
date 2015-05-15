@@ -16,9 +16,14 @@
 	<body ng-controller="BoxController as boxCtrl" >
 		<!-- {{2+2}} test -->
 
-      <p ng-repeat="person in boxCtrl.names">
-       Welcome {{ person }}
+      <div id="playerOneName"><p ng-repeat="person1 in boxCtrl.names">
+       Welcome {{ person1 }}
       </p>
+      </div>
+      <div id="playerTwoName"> <p ng-repeat="person2 in boxCtrl.names2">
+       Welcome {{ person2 }}
+      </p>
+      </div>
   
 		
 			<header>
@@ -35,8 +40,8 @@
 			<hr>
 				<div id="playerPick">
 					<h3>
-						<span class="pickBlue" ng-click="boxCtrl.setPlayerBlue()" >Player One</span> | 
-						<span id="pickRed">Player Two</span>
+						<span class="pickBlue" ng-click="boxCtrl.setPlayerBlue()" >Player One is Blue</span> | 
+						<span id="pickRed">Player Two is Red</span>
 					</h3>
 				</div>
 				<h2>{{"Let's Play"}}</h2>
@@ -66,7 +71,11 @@
 				<!-- <form class="add-name" ng-submit="boxCtrl.addTodo()"> -->
 					<input class="text-box" type="text" placeholder="Enter Name player 1" ng-model="boxCtrl.newName">
 					<!-- <input type="submit" class="btn btn-add" value="+"> -->
-					<button class="boxName" ng-click="boxCtrl.addNames()">Add Name Player 1</button>
+					<button class="boxName" ng-click="boxCtrl.addNames()">Add Name Player One</button>
+
+					<input class="text-box" type="text" placeholder="Enter Name player 2" ng-model="boxCtrl.newName2">
+					<!-- <input type="submit" class="btn btn-add" value="+"> -->
+					<button class="boxName" ng-click="boxCtrl.addNames2()">Add Name Player Two</button>
 
 				<!-- 	<br>
 					<input class="text-box" type="text" placeholder="Name player 2" ng-model="boxCtrl.newName2">

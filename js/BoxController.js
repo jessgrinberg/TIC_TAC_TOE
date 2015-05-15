@@ -130,7 +130,7 @@ function BoxController(){
       ) { 
           console.log("player one wins");
           self.win = true;
-          self.message = "player one wins";
+          self.message = self.newName + " Wins !";
           
     //check for a winning combination for player2("0")      
     } else if (
@@ -145,7 +145,7 @@ function BoxController(){
       ) {
           console.log("player two wins");
           self.win = true;
-          self.message = "player two wins";
+          self.message = self.newName2 + " Wins !";
 
     //once counter reached 8 and no one won, tie!  
     } else if (self.counter === 8) {
@@ -163,6 +163,8 @@ function BoxController(){
       self.player2 = false;
       self.win = false;
       self.names = [];
+      self.names2 = [];
+      self.message = "";
       self.buttons = [
 
     { active: false, 
@@ -231,25 +233,10 @@ self.addNames = addNames;
         self.names.push(self.newName);
         }
 
-// self.addNamePlayer2 = addName2;
-// self.names2 = [""];
-// self.newName2 = " ";
-//   function addName2(){
-//         self.names2.push(self.newName2);
-//         }
-
-
-
-//     var clearReset = document.getElementById("button" + i);
-//     console.log("button" + i)
-//     clearReset.style.backgroundColor = null ;
-//     clearReset.innerHTML = "" ;
-//   }
-//   counter=0;
-//   player1=true;
-//   player2=false;
-//   win = false;
-//   document.getElementById("displayResult").innerHTML="Let's Play !";
-// });
-
+self.names2 = [];
+self.newName2 = " ";
+self.addNames2 = addNames2;
+  function addNames2(){
+        self.names2.push(self.newName2);
+        }
 }

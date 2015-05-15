@@ -26,6 +26,10 @@ h3 {
 	font-family: Didot;
 	text-align: center;
 }
+h4 {
+	font-family: Didot;
+	text-align: center;
+}
 
 h2 button {
 	height: 75px;
@@ -55,8 +59,15 @@ p {
 
 }*/
 
-#titleDisplay {
+.titleDisplay {
 	text-align: center;
+}
+.pickBlue:hover{
+color:#010163;
+}
+
+.pickRed:hover{
+color:#CF0000;
 }
 
 #tic {

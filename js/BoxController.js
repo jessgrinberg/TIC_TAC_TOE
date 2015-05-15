@@ -226,6 +226,18 @@ function BoxController(){
 //function clearGrid() {
 
 
+//Function set players colors
+self.appearGame = appearGame;
+      self.appear = false;
+    
+
+  function appearGame(){
+
+    self.appear = !self.appear;
+}
+
+
+//Function add Names
 self.names = [];
 self.newName = " ";
 self.addNames = addNames;

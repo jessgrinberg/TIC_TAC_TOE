@@ -15,19 +15,8 @@
 	</head>
 	<body ng-controller="BoxController as boxCtrl" >
 		<!-- {{2+2}} test -->
-
-      <div id="playerOneName"><p ng-repeat="person1 in boxCtrl.names">
-       Welcome {{ person1 }}
-      </p>
-      </div>
-      <div id="playerTwoName"> <p ng-repeat="person2 in boxCtrl.names2">
-       Welcome {{ person2 }}
-      </p>
-      </div>
-  
-		
 			<header>
-				<div id="titleDisplay">
+				<div class="titleDisplay" ng-click="boxCtrl.appearGame()">
 					<span id="tic">{{"Tic"}}</span>
 					<span id="tac">{{"Tac"}}</span>
 					<span id="toe">{{"Toe"}}</span>
@@ -38,13 +27,29 @@
 				<div id="redSmallDotRight"></div>
 			</header>
 			<hr>
+			<h2><p ng-show="boxCtrl.appear">{{"Let's Play!"}}
+				</p></h2>
+			<!-- 	<h4><p ng-show="boxCtrl.appear">{{"
+			Please Add Your Names "}}
+				</p></h4> -->
+				<div id="playerOneName" ng-repeat="person1 in boxCtrl.names">
+       Welcome {{ person1 }}
+      	</div>
+   		<div id="playerTwoName" ng-repeat="person2 in boxCtrl.names2">
+       & {{ person2 }}
+      	</div>
+				</h2>
 				<div id="playerPick">
 					<h3>
-						<span class="pickBlue" ng-click="boxCtrl.setPlayerBlue()" >Player One is Blue</span> | 
-						<span id="pickRed">Player Two is Red</span>
+						<span class="pickBlue">Player One is Blue</span> | 
+					<span class="pickRed">Player Two is Red</span>
 					</h3>
 				</div>
-				<h2>{{"Let's Play"}}</h2>
+
+					<h4><p ng-show="boxCtrl.appear">{{"
+			Please Add Your Names "}}
+				</p></h4>
+				
 				<div class="grid">
 					<div class="box" 
 						ng-repeat="b in boxCtrl.buttons"

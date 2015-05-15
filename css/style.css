@@ -5,6 +5,14 @@ html {
   box-sizing: inherit;
 }
 
+.x {
+	background: rebeccapurple;
+}
+
+.o {
+	background: red;
+}
+
 h1{
 	text-align: center;
 	font-family: Didot;
@@ -99,21 +107,18 @@ hr {
 }
 
 .redDot{
-	height: 75px;
-	width: 75px;
 	background-color: #CF0000;
-	border-radius: 50%;
-	float: left;
 }
 
 
-#blueDot{
-	height: 75px;
-	width: 75px;
-	background-color: #010163;
-	border-radius: 50%;
+.blueDot{
+	/*height: 75px;
+	width: 75px;*/
+/*	background: rebeccapurple;*/
+	background: #010163;
+/*	border-radius: 50%;
 	float: left;
-}
+*/}
 
 #redSmallDotLeft {
 	height: 15px;

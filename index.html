@@ -30,9 +30,8 @@
 				<div class="grid">
 					<div class="box" 
 						ng-repeat="b in boxCtrl.buttons"
-						ng-class="{x: b.player1}"
-						ng-click="boxCtrl.clickBox($index)"
-						ng-class="{redDot: b.active}">
+						ng-class="{blueDot: b.display == 'X', redDot: b.display == '0'}"
+						ng-click="boxCtrl.clickBox($index)">
 					</div>
 				</div>
 				<div id="score">
@@ -44,7 +43,9 @@
 	 			<div id="reset">
 					<h2>{{"Reset"}}
 					<br>
-						<button ng-click="boxCtrl.clearGrid()">
+						<button class="" ng-click="boxCtrl.clearGrid()"
+
+						>
 						</button>
 					</h2>
 				</div>

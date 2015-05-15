@@ -2,6 +2,8 @@ angular
   .module('boxApp')
   .controller('BoxController', BoxController); 
 
+
+// control the whole game
 function BoxController(){
 
   var self = this;
@@ -19,12 +21,12 @@ function BoxController(){
   //ClickBox 
   self.clickBox = clickBox;
 
-// self.clearReset = clearReset;
-// self.clearGrid = clearGrid;
-// self.winner = winner;
-// var player1 = true;
-// var player2 = false;
+  //declaration for reset fct
+  // self.reset = reset;
+  // self.clearGrid = clearGrid;
+  // self.clearReset = clearReset;
 
+// self.winner = winner;
 
   //List of 9 boxes
   self.buttons = [
@@ -70,12 +72,12 @@ function BoxController(){
   //Click X/O and increment counter
   function clickBox($index) {
 
-
+    //once 1 player won, alert msg to hit reset to start new game, no move is possible once s/o won
     if(self.win){
       alert('To start a new game, hit reset!');
       return
     } 
-
+    //alert if one btn has been clicked, no more click is possible
     if (self.buttons[$index].display != "") {
       alert('This button has already been clicked');
     } else {
@@ -83,6 +85,7 @@ function BoxController(){
     if(self.player1 == true) {
       console.log("X");
       self.buttons[$index].display = "X";
+      console.log(self.buttons[$index])
       // console.log(self.buttons[$index].display);
       self.buttons[$index].active[$index] = true;
       self.player1 = false;
@@ -92,6 +95,7 @@ function BoxController(){
       self.buttons[$index].active[$index] = false;
       self.player1 = true;
     }
+      //call winner fct, add counter count for ea. click
       winner();
       self.counter ++;
       console.log(self.counter)
@@ -104,6 +108,7 @@ function BoxController(){
   function winner() {
     // console.log("winner x");
 
+    //check for a winning combination for player1("X")
     if(
         ((self.buttons[0].display == "X") && (self.buttons[1].display == "X") && (self.buttons[2].display == "X")) || 
         ((self.buttons[3].display == "X") && (self.buttons[4].display == "X") && (self.buttons[5].display == "X")) || 
@@ -117,7 +122,7 @@ function BoxController(){
           console.log("player one wins");
           self.win = true;
           
-
+    //check for a winning combination for player2("0")      
     } else if (
         ((self.buttons[0].display == "0") && (self.buttons[1].display == "0") && (self.buttons[2].display == "0")) ||   
         ((self.buttons[3].display == "0") && (self.buttons[4].display == "0") && (self.buttons[5].display == "0")) || 
@@ -130,22 +135,42 @@ function BoxController(){
       ) {
           console.log("player two wins");
           self.win = true;
-      
+
+    //once counter reached 8 and no one won, tie!  
     } else if (self.counter === 8) {
            console.log("It's a Tie!");
+           alert('To start a new game, hit reset!');
       }
   }
-  //   // function clearGrid() {
-//   //   self.clearReset =(self.buttons[$index]);
-//   //   console.log(self.buttons[$index]);
-//     // clearReset.style.backgroundColor = null ;
-//     // clearReset.innerHTML = "" ;
+  //Clear the game without refreshing page by hitting reset button
+  // function clearGrid() {
+  //     self.buttons[$index].display($index) = "";
+  //     self.counter = 0;
+  //     console.log(self.clearGrid);
+  // }
 
-// //   counter=0;
-// //   player1=true;
-// //   player2=false;
-// //   win = false;
-// //   console.log("Let's Play !");
-// // });
+ 
+    // function clearGrid() {
+    // self.clearReset = self.buttons[$index];
+    // console.log(self.buttons[$index]);
+    // clearReset.style.backgroundColor = null ;
+    // clearReset.innerHTML = "" ;
+
+
+//function clearGrid() {
+
+
+
+//     var clearReset = document.getElementById("button" + i);
+//     console.log("button" + i)
+//     clearReset.style.backgroundColor = null ;
+//     clearReset.innerHTML = "" ;
 //   }
+//   counter=0;
+//   player1=true;
+//   player2=false;
+//   win = false;
+//   document.getElementById("displayResult").innerHTML="Let's Play !";
+// });
+
 }

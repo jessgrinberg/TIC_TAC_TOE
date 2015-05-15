@@ -2,10 +2,16 @@
 <html ng-app='boxApp'>
 	<head>
 		<title>ANGULAR TTT</title>
-		<link rel="stylesheet" type="text/css" href="css/style.css">
+		
+
+		<script src="js/firebase.js"></script>
+        <script src="js/angularfire.js"></script>
+
 		<script src="js/angular.min.js"></script>
 		<script src="js/app.js"></script>
 		<script src="js/BoxController.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="css/style.css">
 	</head>
 	<body ng-controller="BoxController as boxCtrl" >
 		{{2+2}} test
@@ -47,7 +53,7 @@
 	 			<div class="reset">
 					<h2>{{"Reset"}}
 					<br>
-						<button ng-click="boxCtrl.clearGrid()"
+						<button class="reset" ng-click="boxCtrl.clearGrid($index)"
 
 						>
 						</button>

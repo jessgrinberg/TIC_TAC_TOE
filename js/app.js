@@ -1,3 +1,3 @@
 angular
-    .module('boxApp', []);
+    .module('boxApp',[]);
 

@@ -3,6 +3,8 @@ angular
   .controller('BoxController', BoxController); 
 
 
+  // BoxController.$inject = ['$firebaseObject'];
+
 // control the whole game
 function BoxController(){
 
@@ -27,7 +29,7 @@ function BoxController(){
 
   //declaration for reset fct
   // self.reset = reset;
-  // self.clearGrid = clearGrid;
+  self.clearGrid = clearGrid;
   // self.clearReset = clearReset;
 
 // self.winner = winner;
@@ -75,6 +77,9 @@ function BoxController(){
 
   //Click X/O and increment counter
   function clickBox($index) {
+
+    // var ref = new Firebase("https://tictactoetpf.firebaseio.com/");
+    // var buttons = $firebaseObject(ref);
 
     //once 1 player won, alert msg to hit reset to start new game, no move is possible once s/o won
     if(self.win){
@@ -151,13 +156,55 @@ function BoxController(){
       }
   }
   //Clear the game without refreshing page by hitting reset button
-  // function clearGrid() {
-  //     self.buttons[$index].display = "";
-  //     self.counter = 0;
-  //     console.log(self.clearGrid);
-  //     self.player1 = true;
-  //     self.player2 = false;
-  // }
+  function clearGrid($index) {
+      // self.buttons.splice({active: false, display: ""});
+      self.counter = 0;
+      self.player1 = true;
+      self.player2 = false;
+      self.win = false;
+      self.buttons = [
+
+    { active: false, 
+      id: 0, 
+      display: "" },
+
+    { active: false, 
+      id: 1, 
+      display: "" },
+
+    { active: false, 
+      id: 2, 
+      display: "" },
+
+    { active: false, 
+      id: 3, 
+      display: "" },
+
+    { active: false, 
+      id: 4, 
+      display: "" },
+
+    { active: false, 
+      id: 5, 
+      display: "" },
+
+    { active: false, 
+      id: 6, 
+      display: "" },
+
+    { active: false, 
+      id: 7, 
+      display: "" },
+
+    { active: false, 
+      id: 8, 
+      display: "" }
+
+  ];
+      // self.counter = 0;
+      // console.log(self.clearGrid);
+     //self.buttons[0],1
+  }
 
 
     // function clearGrid() {

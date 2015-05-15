@@ -9,6 +9,8 @@
 	</head>
 	<body ng-controller="BoxController as boxCtrl" >
 		{{2+2}} test
+
+		
 			<header>
 				<div id="titleDisplay">
 					<span id="tic">{{"Tic"}}</span>
@@ -27,23 +29,25 @@
 						<span id="pickRed">Player Two</span>
 					</h3>
 				</div>
+				<h2>{{"Let's Play"}}</h2>
 				<div class="grid">
 					<div class="box" 
 						ng-repeat="b in boxCtrl.buttons"
 						ng-class="{blueDot: b.display == 'X', redDot: b.display == '0'}"
 						ng-click="boxCtrl.clickBox($index)">
 					</div>
+						
 				</div>
 				<div id="score">
 					<h2>
-						<div id="displayResult"> {{"Let's Play"}} 
+						<div id="displayResult"> {{ boxCtrl.message }} 
 						</div>
 					</h2>
 		<!-- use ng hide and ng show -->
-	 			<div id="reset">
+	 			<div class="reset">
 					<h2>{{"Reset"}}
 					<br>
-						<button class="" ng-click="boxCtrl.clearGrid()"
+						<button ng-click="boxCtrl.clearGrid()"
 
 						>
 						</button>

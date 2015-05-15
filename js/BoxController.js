@@ -15,11 +15,15 @@ function BoxController(){
 
   self.win = false;
 
+
   //Set Counter to 0, on each click, the counter will be incremented
   self.counter = 0;
 
   //ClickBox 
   self.clickBox = clickBox;
+
+
+  self.message = self.winner;
 
   //declaration for reset fct
   // self.reset = reset;
@@ -121,6 +125,7 @@ function BoxController(){
       ) { 
           console.log("player one wins");
           self.win = true;
+          self.message = "player one wins";
           
     //check for a winning combination for player2("0")      
     } else if (
@@ -135,21 +140,26 @@ function BoxController(){
       ) {
           console.log("player two wins");
           self.win = true;
+          self.message = "player two wins";
 
     //once counter reached 8 and no one won, tie!  
     } else if (self.counter === 8) {
            console.log("It's a Tie!");
-           alert('To start a new game, hit reset!');
+           self.message = "It's a Tie!";
+           // alert('To start a new game, hit reset!');
+
       }
   }
   //Clear the game without refreshing page by hitting reset button
   // function clearGrid() {
-  //     self.buttons[$index].display($index) = "";
+  //     self.buttons[$index].display = "";
   //     self.counter = 0;
   //     console.log(self.clearGrid);
+  //     self.player1 = true;
+  //     self.player2 = false;
   // }
 
- 
+
     // function clearGrid() {
     // self.clearReset = self.buttons[$index];
     // console.log(self.buttons[$index]);
